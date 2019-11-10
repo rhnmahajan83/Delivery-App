@@ -53,37 +53,37 @@ class HomeScreen extends Component {
   }
   componentDidMount(){
 
-this.setState({dataSource: {
-    "movies": [
-      { "id": "1", "title": "Star Wars", "releaseYear": "1977" },
-      { "id": "2", "title": "Back to the Future", "releaseYear": "1985" },
-      { "id": "3", "title": "The Matrix", "releaseYear": "1999" },
-      { "id": "4", "title": "Inception", "releaseYear": "2010" },
-      { "id": "5", "title": "Interstellar", "releaseYear": "2014" }
-    ]
-  }})
+// this.setState({dataSource: {
+//     "movies": [
+//       { "id": "1", "title": "Star Wars", "releaseYear": "1977" },
+//       { "id": "2", "title": "Back to the Future", "releaseYear": "1985" },
+//       { "id": "3", "title": "The Matrix", "releaseYear": "1999" },
+//       { "id": "4", "title": "Inception", "releaseYear": "2010" },
+//       { "id": "5", "title": "Interstellar", "releaseYear": "2014" }
+//     ]
+//   }})
 
-    // return fetch('https://facebook.github.io/react-native/movies.json', {
-    //     method: 'GET',
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     }
-    // })
-    //   .then((response) => response.json())
-    //   .then((responseJson) => {
+    return fetch('https://facebook.github.io/react-native/movies.json', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
 
-    //     this.setState({
-    //       isLoading: false,
-    //       dataSource: responseJson.movies,
-    //     }, function(){
-    //       console.log("Data::",this.state.dataSource)
-    //     });
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson.movies,
+        }, function(){
+          console.log("Data::",this.state.dataSource)
+        });
 
-    //   })
-    //   .catch((error) =>{
-    //     console.error('Error:::',error);
-    //   });
+      })
+      .catch((error) =>{
+        console.error('Error:::',error);
+      });
   }
 
   render() {
@@ -105,11 +105,11 @@ this.setState({dataSource: {
             flex:1
           }}>
           <Image
-            source={require('../resources/circuit.png')}
+            source={require('../resources/map.png')}
             style={{ width: 30, height: 30, borderRadius: 30 / 2 }}
           />
-          <Text style={{ paddingLeft:10}}>{item.title}</Text>
-          <Text style={{color:"blue", paddingLeft:10}}>{item.releaseYear}</Text>
+          <Text style={{ paddingLeft:10, color: "white"}}>{item.title}</Text>
+          <Text style={{color:"white", paddingLeft:10}}>{item.releaseYear}</Text>
         </TouchableOpacity>}
         />
     
