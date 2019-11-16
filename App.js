@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  createAppContainer,
-  DrawerNavigator,
-} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen.js';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import { createBottomTabNavigator } from 'react-navigation';
 
 export default class App extends React.Component {
   render() {
@@ -14,32 +10,26 @@ export default class App extends React.Component {
   }
 }
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createBottomTabNavigator(
   {
-    Login: LoginScreen,
-    Home: HomeScreen,
-    Register: RegisterScreen,
+    Login: { screen: LoginScreen },
+    Home: { screen: HomeScreen },
+    Register: { screen: RegisterScreen }
   },
   {
-    navigationOptions: {
-      headerTintColor: '#fff',
-      headerStyle: {
-        backgroundColor: '#000',
+    initialRouteName: 'Login',
+    tabBarOptions: {
+      activeTintColor: '#e91e63',
+      inactiveTintColor: '#888',
+      activeBackgroundColor: '#FFF', // iOS
+      inactiveBackgroundColor: '#DDD', // iOS
+      pressColor: '#e91e63', // Android
+      indicatorStyle: { // Android
+        backgroundColor: '#242134',
       },
-    },
-  }
-);
-const MyDrawerNavigator = new DrawerNavigator(
-  {
-    Home: {
-      screen: AppNavigator,
-    },
-  },
-  {
-    drawerBackgroundColor: 'rgba(255,255,255,.9)',
-    contentOptions: {
-      activeTintColor: '#fff',
-      activeBackgroundColor: '#6b52ae',
+      style: {
+        backgroundColor: '#EEE', // Android
+      },
     },
   }
 );

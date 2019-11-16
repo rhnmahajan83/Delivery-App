@@ -15,6 +15,7 @@ import {
   DocumentPickerUtil,
 } from 'react-native-document-picker';
 
+
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -88,6 +89,7 @@ class HomeScreen extends Component {
 
   render() {
     return (
+      <View style={{ paddingTop:10}}>
           <ImageBackground
       source={require('../resources/circuit.png')}
       style={{ width: '100%', height: '100%', resizeMode: 'cover' }}>
@@ -114,6 +116,7 @@ class HomeScreen extends Component {
         />
     
        </ImageBackground>
+       </View>
     );
   }
 }
