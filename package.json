@@ -13,11 +13,11 @@
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native": "^0.61.5",
     "react-native-document-picker": "3.2.4",
     "react-native-drawer-layout": "2.0.0",
     "react-native-elements": "1.1.0",
-    "react-native-maps": "^0.25.0",
+    "react-native-maps": "~0.25.0",
     "react-native-navigation": "2.26.5",
     "react-native-paper": "^2.16.0",
     "react-native-vector-icons": "^6.6.0",
@@ -26,7 +26,7 @@
     "react-navigation-material-bottom-tabs": "^2.1.5"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.1.0"
+    "babel-preset-expo": "^7.0.0"
   },
   "private": true
 }
