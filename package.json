@@ -13,7 +13,7 @@
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
-    "react-native": "^0.61.5",
+    "react-native": "^0.62.3",
     "react-native-document-picker": "3.2.4",
     "react-native-drawer-layout": "2.0.0",
     "react-native-elements": "1.1.0",
